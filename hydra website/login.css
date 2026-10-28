@@ -1,0 +1,790 @@
+/* ============================================
+   HYDRA ARENA — Premium Login Page
+   Dark Skull-Flame Glassmorphism Theme
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Rajdhani:wght@500;600;700&display=swap');
+
+:root {
+  --bg-obsidian:        #030208;
+  --bg-deep:            #07050F;
+  --panel-glass:        rgba(12, 8, 26, 0.94);
+  --panel-border:       rgba(168, 85, 247, 0.30);
+
+  --purple-neon:        #A855F7;
+  --purple-bright:      #C084FC;
+  --purple-deep:        #7C3AED;
+  --purple-dark:        #6D28D9;
+  --purple-glow:        rgba(168, 85, 247, 0.32);
+  --violet-mid:         #8B5CF6;
+
+  --flame-red:          #FF2D55;
+  --flame-orange:       #FF6B35;
+  --flame-gold:         #FFB800;
+  --flame-glow:         rgba(255, 45, 85, 0.22);
+
+  --gold-accent:        #E9D5FF;
+  --text-main:          #F5F0FF;
+  --text-bright:        #FFFFFF;
+  --text-muted:         #9585B8;
+  --text-subtle:        #5A4E78;
+
+  --font-display:       "Lexend", "Rajdhani", sans-serif;
+  --font-sub:           "Lexend", sans-serif;
+  --font-body:          "Lexend", sans-serif;
+
+  --ease-smooth:        cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce:        cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(36px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(-28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes logoPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 24px rgba(168, 85, 247, 0.50),
+      0 0 60px rgba(109, 40, 217, 0.22),
+      0 0 16px rgba(255, 45, 85, 0.20);
+  }
+  50% {
+    box-shadow:
+      0 0 44px rgba(168, 85, 247, 0.75),
+      0 0 100px rgba(109, 40, 217, 0.42),
+      0 0 32px rgba(255, 45, 85, 0.35);
+  }
+}
+
+@keyframes borderGlow {
+  0%, 100% { border-color: rgba(168, 85, 247, 0.28); }
+  50%       { border-color: rgba(168, 85, 247, 0.58); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(74, 222, 128, 0.60); }
+  50%       { box-shadow: 0 0 18px rgba(74, 222, 128, 0.90); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* ============================================
+   BODY
+   ============================================ */
+html {
+  scroll-behavior: smooth;
+  background-color: #030208;
+}
+
+body {
+  font-family: var(--font-body);
+  font-optical-sizing: auto;
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #030208;
+  background:
+    radial-gradient(ellipse 70% 60% at 12% 15%, rgba(109, 40, 217, 0.28), transparent),
+    radial-gradient(ellipse 65% 55% at 90% 85%, rgba(124, 58, 237, 0.22), transparent),
+    radial-gradient(ellipse 45% 40% at 55% 50%, rgba(168, 85, 247, 0.06), transparent),
+    radial-gradient(ellipse 50% 45% at 80% 10%, rgba(255, 45, 85, 0.05), transparent),
+    linear-gradient(160deg, #0D0A1E 0%, #07050F 60%, #030208 100%);
+  background-attachment: fixed;
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+  animation: fadeIn 0.6s var(--ease-smooth) both;
+}
+
+/* ============================================
+   BACKGROUND
+   ============================================ */
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 65% 55% at 20% 20%, rgba(109, 40, 217, 0.24), transparent),
+    radial-gradient(ellipse 60% 50% at 82% 80%, rgba(168, 85, 247, 0.16), transparent),
+    radial-gradient(ellipse 40% 35% at 80% 15%, rgba(255, 45, 85, 0.07), transparent),
+    #030208;
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(168, 85, 247, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168, 85, 247, 0.02) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.particles, .circle {
+  display: none !important;
+}
+
+/* ============================================
+   HEADER / NAV (shared with index)
+   ============================================ */
+.nav-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  height: 68px;
+  background: rgba(5, 3, 12, 0.92);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.20);
+  box-shadow:
+    0 4px 40px rgba(0, 0, 0, 0.60),
+    0 1px 0 rgba(168, 85, 247, 0.10) inset;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  animation: slideDown 0.5s var(--ease-smooth) both;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-hamburger {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: rgba(168, 85, 247, 0.08);
+  border: 1px solid rgba(168, 85, 247, 0.22);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.nav-hamburger:hover {
+  background: rgba(168, 85, 247, 0.18);
+  box-shadow: 0 0 16px var(--purple-glow);
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--flame-red), var(--purple-bright));
+  border-radius: 2px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.nav-icon-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(168, 85, 247, 0.08);
+  border: 1px solid rgba(168, 85, 247, 0.22);
+  border-radius: 10px;
+  color: var(--purple-bright);
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+
+.nav-icon-btn:hover {
+  background: rgba(168, 85, 247, 0.22);
+  box-shadow: 0 0 16px var(--purple-glow);
+  color: var(--text-bright);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.nav-logo-wrapper {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+}
+
+.nav-logo-img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid var(--purple-neon);
+  box-shadow: 0 0 14px var(--purple-glow), 0 0 30px rgba(255, 45, 85, 0.15);
+  display: block;
+}
+
+.nav-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #FFFFFF 30%, var(--purple-bright) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.anniversary-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: linear-gradient(135deg, rgba(255, 45, 85, 0.12), rgba(168, 85, 247, 0.14));
+  border: 1px solid rgba(168, 85, 247, 0.38);
+  color: var(--purple-bright);
+  font-family: var(--font-sub);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 6px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  background: rgba(168, 85, 247, 0.10);
+  border: 1px solid rgba(168, 85, 247, 0.26);
+  color: var(--purple-bright);
+  font-family: var(--font-sub);
+  font-size: 0.78rem;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(168, 85, 247, 0.22);
+  box-shadow: 0 6px 24px rgba(168, 85, 247, 0.28);
+  border-color: rgba(168, 85, 247, 0.50);
+}
+
+/* ============================================
+   MAIN LAYOUT
+   ============================================ */
+.login-wrapper {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 500px;
+  gap: 72px;
+  min-height: 100vh;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 72px 5%;
+  align-items: center;
+}
+
+/* ============================================
+   LEFT BRAND PANEL
+   ============================================ */
+.brand-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  animation: slideRight 0.7s var(--ease-smooth) 0.1s both;
+}
+
+.brand-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 3px solid var(--purple-neon);
+  box-shadow:
+    0 0 32px rgba(168, 85, 247, 0.50),
+    0 0 70px rgba(109, 40, 217, 0.25),
+    0 0 20px rgba(255, 45, 85, 0.22);
+  animation: logoPulse 3.5s ease-in-out infinite;
+  display: block;
+}
+
+.brand-eyebrow {
+  font-family: var(--font-sub);
+  font-size: 0.68rem;
+  color: var(--purple-bright);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--flame-red), var(--purple-neon), transparent);
+  border-radius: 2px;
+}
+
+.brand-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.06;
+  color: var(--text-bright);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-optical-sizing: auto;
+}
+
+.brand-title span {
+  background: linear-gradient(135deg, var(--flame-red), var(--purple-neon), var(--purple-bright));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.brand-sub {
+  font-size: 0.93rem;
+  color: var(--text-muted);
+  line-height: 1.80;
+  max-width: 470px;
+}
+
+/* ============================================
+   MILESTONE CARDS
+   ============================================ */
+.milestone-cards {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.milestone-card {
+  flex: 1;
+  min-width: 110px;
+  text-align: center;
+  background: rgba(168, 85, 247, 0.06);
+  border: 1px solid rgba(168, 85, 247, 0.20);
+  border-radius: 12px;
+  padding: 18px 10px;
+  transition: transform 0.22s var(--ease-bounce), box-shadow 0.22s, border-color 0.22s;
+  backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+}
+
+.milestone-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--purple-neon), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.milestone-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(168, 85, 247, 0.28);
+  border-color: rgba(168, 85, 247, 0.40);
+}
+
+.milestone-card:hover::after { opacity: 1; }
+
+.milestone-value {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, var(--flame-red), var(--purple-neon), var(--purple-bright));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: block;
+}
+
+.milestone-label {
+  font-size: 0.58rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  margin-top: 5px;
+}
+
+/* ============================================
+   LOGIN CARD
+   ============================================ */
+.login-card {
+  background: rgba(10, 7, 22, 0.92);
+  border: 1px solid rgba(168, 85, 247, 0.30);
+  border-radius: 26px;
+  padding: 46px 40px;
+  box-shadow:
+    0 0 80px rgba(109, 40, 217, 0.18),
+    0 32px 80px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    inset 0 -1px 0 rgba(168, 85, 247, 0.08);
+  backdrop-filter: blur(32px) saturate(170%);
+  -webkit-backdrop-filter: blur(32px) saturate(170%);
+  animation: slideLeft 0.7s var(--ease-smooth) 0.2s both, borderGlow 5s ease-in-out 0.9s infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top gradient bar */
+.login-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--flame-red) 20%, var(--purple-neon) 50%, var(--purple-bright) 80%, transparent);
+  opacity: 0.80;
+}
+
+.login-logo-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 26px;
+}
+
+.login-logo-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 2.5px solid var(--purple-neon);
+  box-shadow:
+    0 0 28px rgba(168, 85, 247, 0.50),
+    0 0 16px rgba(255, 45, 85, 0.22);
+  display: block;
+  animation: logoPulse 3.2s ease-in-out infinite;
+}
+
+.login-eyebrow {
+  font-family: var(--font-sub);
+  font-size: 0.64rem;
+  color: var(--purple-bright);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.login-title {
+  font-family: var(--font-display);
+  font-size: 1.30rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  text-align: center;
+  margin-bottom: 22px;
+  line-height: 1.35;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #FFFFFF, var(--purple-bright));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ============================================
+   DIVIDER
+   ============================================ */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+  width: 100%;
+  height: auto;
+  background: none;
+  opacity: 1;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.28), transparent);
+}
+
+.divider-text {
+  font-size: 0.67rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: var(--font-sub);
+}
+
+/* ============================================
+   GOOGLE SIGN-IN BUTTON
+   ============================================ */
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 16px 22px;
+  background: linear-gradient(135deg, #4C1D95 0%, #7C3AED 40%, #A855F7 100%);
+  border: 1px solid rgba(168, 85, 247, 0.40);
+  border-radius: 14px;
+  color: #FFFFFF;
+  font-family: var(--font-sub);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.22s var(--ease-smooth), box-shadow 0.22s, border-color 0.22s;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 28px rgba(109, 40, 217, 0.32);
+}
+
+.google-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.16), transparent);
+  transition: left 0.50s;
+}
+
+.google-btn:hover::before { left: 100%; }
+
+.google-btn:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 16px 48px rgba(168, 85, 247, 0.65),
+    0 0 30px rgba(255, 45, 85, 0.18);
+  border-color: rgba(168, 85, 247, 0.65);
+}
+
+.google-btn .btn-icon {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   STATUS BAR
+   ============================================ */
+.status-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(168, 85, 247, 0.06);
+  border: 1px solid rgba(168, 85, 247, 0.14);
+  border-radius: 8px;
+  margin-top: 18px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 10px rgba(74, 222, 128, 0.70), 0 0 20px rgba(74, 222, 128, 0.30);
+  flex-shrink: 0;
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.status-text {
+  font-size: 0.69rem;
+  color: var(--text-muted);
+  font-family: var(--font-sub);
+  letter-spacing: 0.8px;
+}
+
+/* ============================================
+   INPUTS (in login/registration forms)
+   ============================================ */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"],
+select, textarea {
+  background: rgba(168, 85, 247, 0.05) !important;
+  border: 1px solid rgba(168, 85, 247, 0.18) !important;
+  color: #F5F0FF !important;
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-family: var(--font-body);
+  width: 100%;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  outline: none;
+  font-size: 0.90rem;
+  letter-spacing: 0.3px;
+}
+
+input::placeholder, textarea::placeholder { color: var(--text-subtle) !important; }
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--purple-neon) !important;
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.14) !important;
+  background: rgba(168, 85, 247, 0.08) !important;
+}
+
+/* ============================================
+   LOADING SPINNER
+   ============================================ */
+.loading-spinner {
+  width: 44px;
+  height: 44px;
+  border: 3px solid rgba(168, 85, 247, 0.12);
+  border-top-color: var(--purple-neon);
+  border-right-color: var(--flame-red);
+  border-radius: 50%;
+  animation: spin 0.85s linear infinite;
+  margin: 0 auto 16px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 960px) {
+  .login-wrapper {
+    grid-template-columns: 1fr;
+    padding: 50px 5%;
+    gap: 44px;
+    min-height: auto;
+  }
+
+  .brand-panel {
+    align-items: center;
+    text-align: center;
+  }
+
+  .brand-eyebrow {
+    justify-content: center;
+  }
+
+  .brand-sub {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .milestone-cards {
+    justify-content: center;
+  }
+
+  .login-card {
+    animation: slideUp 0.7s var(--ease-smooth) 0.2s both;
+  }
+}
+
+@media (max-width: 520px) {
+  .login-card {
+    padding: 32px 22px;
+    border-radius: 20px;
+  }
+
+  .brand-title {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+
+  .milestone-cards {
+    gap: 8px;
+  }
+
+  .milestone-card {
+    min-width: 90px;
+    padding: 14px 8px;
+  }
+
+  .nav-header {
+    height: 60px;
+    padding: 0 4%;
+  }
+
+  .nav-title {
+    font-size: 0.88rem;
+    letter-spacing: 1.5px;
+  }
+
+  .anniversary-badge {
+    display: none;
+  }
+}

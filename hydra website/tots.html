@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HYDRA | Ballon d'Or — 2nd Anniversary</title>
+    <meta name="description" content="HYDRA FC Tamil Ballon d'Or player updates for the 2nd Anniversary tournament.">
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="tots.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">`n    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>`n    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="nav-header">
+        <div class="nav-left">
+            <a href="user.html" class="contact-btn">
+                <i class="fa-solid fa-arrow-left"></i> Dashboard
+            </a>
+            <div class="nav-brand" style="cursor:default;">
+                <div class="nav-logo-wrapper">
+                    <img src="new-logo.jpg" alt="HYDRA FC Logo" class="nav-logo-img">
+                </div>
+                <span class="nav-title">HYDRA ESPORTS</span>
+                <span class="anniversary-badge"><i class="fa-solid fa-cake-candles"></i> 2nd Anniversary</span>
+            </div>
+        </div>
+        <div class="nav-right">
+            <button class="nav-icon-btn" aria-label="Profile">
+                <i class="fa-solid fa-circle-user"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <span class="tagline"><i class="fa-solid fa-star"></i> Ballon d'Or 2026 • 2nd Anniversary</span>
+        <h1>🏅 Ballon d'Or Updates</h1>
+        <p>
+            Latest Ballon d'Or award winners and featured players updated directly from the HYDRA 2nd Anniversary tournament database.
+        </p>
+    </section>
+
+    <!-- TOTS Grid -->
+    <div class="page-wrapper" style="padding: 0 4% 40px; max-width: 1200px; margin: 0 auto; width: 100%;">
+
+        <div style="margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid var(--border-purple);">
+            <p class="section-title" style="font-size: clamp(0.9rem, 2.5vw, 1.1rem);">Featured Ballon d'Or Players</p>
+            <p style="color: var(--text-muted); font-size: 0.82rem; margin-top: -8px;">Live database updates</p>
+        </div>
+
+        <!-- Uses .tots-grid from tots.css — all mobile breakpoints apply -->
+        <div id="totsContainer" class="tots-grid">
+            <div class="card" style="text-align: center; padding: 48px; grid-column: 1/-1;">
+                <div class="loading-spinner"></div>
+                <p style="color: var(--text-muted); font-family: var(--font-display); font-size: 0.8rem; letter-spacing: 1px; margin-top: 8px;">Loading Ballon d'Or Players...</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <h3>HYDRA ESPORTS TAMIL</h3>
+        <p>HAIL HYDRA</p>
+    </footer>
+
+    <script src="3d-effects.js"></script>
+    <script type="module" src="tots.js"></script>
+
+</body>
+</html>
+

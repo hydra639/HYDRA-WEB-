@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HYDRA ESPORTS | 2nd Anniversary Tournament Registration</title>
+    <meta name="description" content="Register your team for the official HYDRA 2nd Anniversary FC Mobile tournament.">
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">`n    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>`n    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="nav-header">
+        <div class="nav-left">
+            <a href="user.html" class="contact-btn">
+                <i class="fa-solid fa-arrow-left"></i> Dashboard
+            </a>
+            <div class="nav-brand" style="cursor:default;">
+                <div class="nav-logo-wrapper">
+                    <img src="new-logo.jpg" alt="HYDRA FC Logo" class="nav-logo-img">
+                </div>
+                <span class="nav-title">HYDRA ESPORTS</span>
+                <span class="anniversary-badge"><i class="fa-solid fa-cake-candles"></i> 2nd Anniversary</span>
+            </div>
+        </div>
+        <div class="nav-right">
+            <button class="nav-icon-btn" aria-label="Profile">
+                <i class="fa-solid fa-circle-user"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h1><i class="fa-solid fa-pen-to-square"></i> Tournament Registration</h1>
+        <p>Register your team for the official HYDRA 2nd Anniversary FC Mobile Championship.</p>
+    </section>
+
+    <!-- Registration Form -->
+    <div class="page-wrapper">
+        <div class="form-card card">
+
+            <!-- Logo -->
+            <div class="login-logo-box">
+                <img src="new-logo.jpg" alt="HYDRA FC Logo" class="login-logo-img">
+            </div>
+
+            <span class="login-eyebrow"><i class="fa-solid fa-trophy"></i> 2nd Anniversary Tournament Entry</span>
+            <h2 class="login-title">Register Your Team</h2>
+
+            <p style="color: var(--text-muted); font-size: 0.82rem; text-align: center; margin-bottom: 20px; line-height: 1.65;">
+                ⚠️ Only verified competitors are allowed to enter the 2nd Anniversary tournament. Complete all details before proceeding.
+            </p>
+
+            <div class="divider"><span class="divider-text">Player Details</span></div>
+
+            <form id="registrationForm" style="display: flex; flex-direction: column; gap: 14px;">
+
+                <input type="text" id="name" placeholder="👤 Player / Team Name" required>
+                <input type="email" id="email" placeholder="📧 Email Address" required>
+                <input type="text" id="mobile" placeholder="📱 Contact Phone Number" required>
+                <input type="text" id="uid" placeholder="🆔 In-Game UID" required>
+                <input type="text" id="ign" placeholder="🎮 In-Game Name (IGN)" required>
+
+                <div class="divider"><span class="divider-text">Payment Details</span></div>
+
+                <p style="color: var(--text-muted); text-align: center; font-size: 0.84rem;">
+                    Pay the entry fee to the UPI number below:
+                </p>
+
+                <p style="color: var(--purple-bright); font-family: var(--font-display); text-align: center; font-size: 1.3rem; letter-spacing: 3px; font-weight: 800;">
+                    8778804457
+                </p>
+
+                <p style="color: var(--text-muted); text-align: center; font-size: 0.84rem;">
+                    Upload your payment confirmation screenshot:
+                </p>
+
+                <input type="file" id="screenshot" accept="image/*" required>
+
+                <button type="submit" class="google-btn">
+                    <i class="fa-solid fa-trophy"></i> Submit 2nd Anniversary Entry
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>HAIL HYDRA</p>
+    </footer>
+
+    <script src="3d-effects.js"></script>
+    <script type="module" src="registration.js"></script>
+
+</body>
+</html>
+

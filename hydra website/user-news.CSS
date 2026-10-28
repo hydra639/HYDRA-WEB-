@@ -1,0 +1,197 @@
+/* ============================================
+   HYDRA ARENA — News & Announcements
+   Ultra-Premium Skull-Flame Dark Gaming Theme
+   ============================================ */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body inherits from index.css base styles */
+
+html {
+  background-color: #030208;
+}
+
+body {
+  background-color: #030208;
+}
+
+/* ============================================
+   UPDATES GRID LAYOUT
+   ============================================ */
+#updatesContainer,
+#newsContainer {
+  width: 90%;
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  padding-bottom: 70px;
+}
+
+/* ============================================
+   NEWS CARD — Premium Glass Style
+   ============================================ */
+.news-card {
+  background: rgba(14, 9, 30, 0.78);
+  border: 1px solid rgba(168, 85, 247, 0.22);
+  border-radius: 22px;
+  overflow: hidden;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transition:
+    transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.32s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.30s;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.45);
+  position: relative;
+}
+
+/* Top shimmer line on each card */
+.news-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 45, 85, 0.50), rgba(168, 85, 247, 0.70), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 2;
+}
+
+.news-card:hover::before { opacity: 1; }
+
+.news-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow:
+    0 22px 60px rgba(168, 85, 247, 0.28),
+    0 0 0 1px rgba(168, 85, 247, 0.38);
+  border-color: rgba(168, 85, 247, 0.48);
+}
+
+/* Image wrapper */
+.news-card-img-wrap {
+  overflow: hidden;
+  height: 215px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.news-card-img-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 80px;
+  background: linear-gradient(to top, rgba(10, 7, 22, 0.75), transparent);
+  z-index: 1;
+}
+
+.news-card img,
+.news-card-img-wrap img {
+  width: 100%;
+  height: 215px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.48s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.news-card:hover img,
+.news-card:hover .news-card-img-wrap img {
+  transform: scale(1.08);
+}
+
+/* News card content */
+.news-content {
+  padding: 24px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.news-content h2 {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #F5F0FF;
+  letter-spacing: 0.4px;
+  line-height: 1.50;
+}
+
+.news-content p {
+  font-size: 0.84rem;
+  color: #9585B8;
+  line-height: 1.74;
+  flex: 1;
+}
+
+.news-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #C084FC;
+  background: rgba(168, 85, 247, 0.10);
+  border: 1px solid rgba(168, 85, 247, 0.24);
+  border-radius: 20px;
+  padding: 5px 14px;
+  letter-spacing: 0.5px;
+  width: fit-content;
+  margin-top: auto;
+}
+
+/* ============================================
+   LOADING STATE
+   ============================================ */
+.loading {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #9585B8;
+  font-size: 0.88rem;
+  padding: 80px 20px;
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  letter-spacing: 1px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  #updatesContainer,
+  #newsContainer {
+    grid-template-columns: 1fr;
+    width: 94%;
+    gap: 20px;
+  }
+
+  .news-card-img-wrap,
+  .news-card-img-wrap img,
+  .news-card img {
+    height: 185px;
+  }
+}
+
+@media (max-width: 480px) {
+  #updatesContainer,
+  #newsContainer {
+    width: 96%;
+    gap: 16px;
+    padding-bottom: 50px;
+  }
+
+  .news-card {
+    border-radius: 18px;
+  }
+
+  .news-content {
+    padding: 18px 16px;
+  }
+}

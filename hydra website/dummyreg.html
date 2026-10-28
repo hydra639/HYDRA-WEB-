@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HYDRA ESPORTS | Registration Closed</title>
+<meta name="description" content="Registration for the HYDRA 2nd Anniversary Tournament is now closed.">
+
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+/* ============================================
+   HYDRA ESPORTS — Registration Closed Page
+   Palette: Obsidian / Deep Purple / Crimson Flame
+   ============================================ */
+
+:root {
+  --bg-void:        #030208;
+  --bg-deep:        #07050F;
+  --bg-navy:        #0D0A1E;
+  --bg-card:        rgba(12, 8, 26, 0.94);
+  --bg-glass:       rgba(16, 10, 34, 0.72);
+  --purple-neon:    #A855F7;
+  --purple-bright:  #C084FC;
+  --purple-deep:    #7C3AED;
+  --purple-glow:    rgba(168, 85, 247, 0.30);
+  --flame-red:      #FF2D55;
+  --flame-orange:   #FF6B35;
+  --flame-gold:     #FFB800;
+  --flame-glow:     rgba(255, 45, 85, 0.25);
+  --text-main:      #F5F0FF;
+  --text-bright:    #FFFFFF;
+  --text-muted:     #9585B8;
+  --text-subtle:    #5A4E78;
+  --border-purple:  rgba(168, 85, 247, 0.30);
+  --border-flame:   rgba(255, 45, 85, 0.35);
+  --font-display:   "Lexend", "Rajdhani", sans-serif;
+  --font-body:      "Lexend", sans-serif;
+  --radius-lg:      22px;
+  --radius-xl:      30px;
+  --ease-smooth:    cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce:    cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-void);
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-void);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── Ambient Background ── */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 30% 20%, rgba(124, 58, 237, 0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 75% 75%, rgba(255, 45, 85, 0.14) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 35% at 50% 50%, rgba(168, 85, 247, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Floating orbs */
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  animation: floatOrb 12s ease-in-out infinite;
+}
+.orb-1 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.20), transparent 70%);
+  top: -120px; left: -120px;
+  animation-delay: 0s;
+}
+.orb-2 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(255, 45, 85, 0.18), transparent 70%);
+  bottom: -100px; right: -100px;
+  animation-delay: -6s;
+}
+.orb-3 {
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(255, 184, 0, 0.10), transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: -3s;
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%       { transform: translateY(-30px) scale(1.07); }
+}
+
+/* ── Main Card ── */
+.container {
+  position: relative;
+  z-index: 10;
+  width: 92%;
+  max-width: 640px;
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-flame);
+  border-radius: var(--radius-xl);
+  padding: 56px 48px 48px;
+  backdrop-filter: blur(24px) saturate(1.5);
+  -webkit-backdrop-filter: blur(24px) saturate(1.5);
+  box-shadow:
+    0 0 0 1px rgba(255, 45, 85, 0.10),
+    0 8px 32px rgba(0,0,0,0.6),
+    0 0 80px rgba(255, 45, 85, 0.12),
+    0 0 120px rgba(124, 58, 237, 0.10),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+  animation: cardIn 0.8s var(--ease-bounce) both;
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(40px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── Brand Bar ── */
+.brand-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+.brand-logo {
+  width: 52px; height: 52px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1.5px solid var(--border-purple);
+  box-shadow: 0 0 16px var(--purple-glow);
+}
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, var(--purple-bright), var(--flame-red));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Icon ── */
+.icon-wrap {
+  width: 96px; height: 96px;
+  margin: 0 auto 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255,45,85,0.18), rgba(124,58,237,0.18));
+  border: 1.5px solid var(--border-flame);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.6rem;
+  box-shadow: 0 0 40px rgba(255,45,85,0.25), inset 0 1px 0 rgba(255,255,255,0.08);
+  animation: iconPulse 3s ease-in-out infinite;
+}
+@keyframes iconPulse {
+  0%, 100% { box-shadow: 0 0 40px rgba(255,45,85,0.25), inset 0 1px 0 rgba(255,255,255,0.08); }
+  50%       { box-shadow: 0 0 70px rgba(255,45,85,0.45), 0 0 30px rgba(124,58,237,0.30), inset 0 1px 0 rgba(255,255,255,0.08); }
+}
+
+/* ── Eyebrow ── */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--flame-glow);
+  border: 1px solid var(--border-flame);
+  border-radius: 50px;
+  padding: 5px 16px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--flame-red);
+  margin-bottom: 18px;
+  animation: blink 2.4s ease-in-out infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+/* ── Heading ── */
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #fff 20%, var(--purple-bright) 55%, var(--flame-red) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 6px;
+}
+
+/* ── Divider ── */
+.divider {
+  width: 120px;
+  height: 2px;
+  margin: 22px auto;
+  background: linear-gradient(90deg, transparent, var(--flame-red), var(--purple-neon), transparent);
+  border-radius: 2px;
+  opacity: 0.7;
+}
+
+/* ── Body Text ── */
+.body-text {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+/* ── Warning Pill ── */
+.warning-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 24px 0 32px;
+  background: rgba(255, 45, 85, 0.10);
+  border: 1px solid rgba(255, 45, 85, 0.30);
+  border-radius: 50px;
+  padding: 10px 22px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--flame-red);
+}
+
+/* ── Return Button ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 36px;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-bright);
+  background: linear-gradient(135deg, var(--purple-deep) 0%, var(--flame-red) 100%);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-smooth);
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.35), 0 2px 8px rgba(255, 45, 85, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.12), transparent);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.55), 0 4px 16px rgba(255, 45, 85, 0.40);
+}
+.btn:hover::before { opacity: 1; }
+.btn:active { transform: translateY(-1px) scale(1.01); }
+
+/* ── Footer ── */
+footer {
+  position: fixed;
+  bottom: 18px;
+  font-size: 0.75rem;
+  color: var(--text-subtle);
+  letter-spacing: 0.08em;
+  z-index: 10;
+}
+footer span {
+  background: linear-gradient(90deg, var(--purple-bright), var(--flame-red));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .container { padding: 40px 24px 36px; }
+  .brand-logo { width: 42px; height: 42px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background Orbs -->
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<div class="container">
+
+  <!-- Brand -->
+  <div class="brand-bar">
+    <img src="new-logo.jpg" alt="HYDRA Esports Logo" class="brand-logo">
+    <span class="brand-name">Hydra Esports</span>
+  </div>
+
+  <!-- Icon -->
+  <div class="icon-wrap">🔒</div>
+
+  <!-- Eyebrow -->
+  <div class="eyebrow">
+    <i class="fa-solid fa-circle-xmark"></i>
+    Access Denied
+  </div>
+
+  <!-- Title -->
+  <h1>Registration Closed</h1>
+
+  <div class="divider"></div>
+
+  <!-- Body -->
+  <p class="body-text">
+    The gates have been sealed.<br>
+    Registration for the <strong style="color:var(--purple-bright);">2nd Anniversary Tournament</strong> is officially closed.<br>
+    No further entries will be accepted.
+  </p>
+
+  <!-- Warning -->
+  <div class="warning-pill">
+    <i class="fa-solid fa-triangle-exclamation"></i>
+    Entries Are No Longer Open
+  </div>
+
+  <!-- CTA -->
+  <a href="user.html" class="btn">
+    <i class="fa-solid fa-arrow-left"></i>
+    Return to Dashboard
+  </a>
+
+</div>
+
+<footer>
+  © 2026 <span>HYDRA ESPORTS</span> &nbsp;•&nbsp; All Rights Reserved
+</footer>
+
+</body>
+</html>
